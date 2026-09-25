@@ -42,10 +42,13 @@ problem2_df =
 
 problem2_df
 ```
+```{r, warning=FALSE}
 mean(pull(problem2_df, random_sample))
 mean(pull(problem2_df, positive))
 mean(pull(problem2_df, character_vector))
 mean(pull(problem2_df, factor_vector))
+```
+
 The mean can be calculated for the numeric and logical variables, but not for the character or factor variables. For the logical variable, R treats `TRUE` as 1 and `FALSE` as 0, so the mean represents the proportion of values that are `TRUE`. The character and factor variables return `NA` because they are not numeric or logical.
 ```{r, results='hide', warning=FALSE}
 as.numeric(pull(problem2_df, positive))
